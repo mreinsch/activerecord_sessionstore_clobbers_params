@@ -1,4 +1,10 @@
 Arss::Application.routes.draw do
+
+  scope "(:locale)", :locale => /en|ja/ do
+    root :to => 'home#index'
+    match 'some' => 'home#some'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
